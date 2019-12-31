@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 15:46:18 by cdana             #+#    #+#             */
-/*   Updated: 2019/12/31 11:48:26 by charles          ###   ########.fr       */
+/*   Created: 2019/12/31 12:05:05 by cdana             #+#    #+#             */
+/*   Updated: 2019/12/31 12:05:08 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	slen(char *s, char p)
 {
