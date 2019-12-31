@@ -6,7 +6,7 @@
 /*   By: charles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 16:27:52 by charles           #+#    #+#             */
-/*   Updated: 2019/11/30 15:49:55 by cdana            ###   ########.fr       */
+/*   Updated: 2019/12/31 11:23:02 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <limits.h>
 
 int		get_next_line(int fd, char **line);
-int		slen(char *s, char p);
-int		merge(char **dest, char *buff);
-int		cpynshift(char *ctnt, char **line);
+int		ft_merge(char **dest, char *buff);
+int		ft_cpy_shift(char **ctnt, char **line);
+int		ft_read(int fd, char **ctnt);
 #endif
