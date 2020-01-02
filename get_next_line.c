@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 14:39:06 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 13:50:27 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/02 14:13:05 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static int	ft_init(char **ctnt, char **line, int fd)
 	if (!(*line = malloc(1)))
 		return (-1);
 	(*line)[0] = 0;
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
+		return (-1);
 	if (*ctnt == 0)
 	{
 		if (!((*ctnt) = malloc(1)))
 			return (-1);
 		(*ctnt)[0] = 0;
 	}
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
-		return (-1);
 	return (1);
 }
 
