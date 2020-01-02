@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 15:46:18 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 11:21:52 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/02 12:34:33 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int			ft_cpy_shift(char **ctnt, char **line)
 {
 	int		i;
 	int		j;
+	int		ret;
 
 	free(*line);
 	if (!(*line = malloc(slen(*ctnt, '\n') + 1)))
@@ -99,6 +100,7 @@ int			ft_cpy_shift(char **ctnt, char **line)
 		i++;
 	}
 	(*line)[i] = 0;
+	ret = ((*ctnt)[i] == '\n');
 	if ((*ctnt)[i] == '\n')
 		i++;
 	j = 0;
@@ -108,5 +110,5 @@ int			ft_cpy_shift(char **ctnt, char **line)
 		j++;
 	}
 	(*ctnt)[j] = 0;
-	return (1);
+	return (ret);
 }

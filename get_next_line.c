@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 14:39:06 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 11:45:32 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/02 12:27:17 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,5 @@ int			get_next_line(int fd, char **line)
 		ctnt[fd] = 0;
 		return (0);
 	}
-	if (ft_cpy_shift(ctnt + fd, line) == -1)
-		return (-1);
-	return (1);
+	return (ft_cpy_shift(ctnt + fd, line));
 }
