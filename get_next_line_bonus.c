@@ -6,12 +6,11 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/31 12:03:38 by cdana             #+#    #+#             */
-/*   Updated: 2019/12/31 12:04:31 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/02 11:45:23 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <stdio.h>
 
 static int	ft_init(char **ctnt, char **line, int fd)
 {
@@ -28,7 +27,7 @@ static int	ft_init(char **ctnt, char **line, int fd)
 			return (-1);
 		(*ctnt)[0] = 0;
 	}
-	if (fd < 0 || fd > OPEN_MAX)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (-1);
 	return (1);
 }
