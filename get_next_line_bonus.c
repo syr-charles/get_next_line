@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 14:39:06 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 13:50:27 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/02 12:40:27 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/02 12:40:37 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	ft_init(char **ctnt, char **line, int fd)
 {
