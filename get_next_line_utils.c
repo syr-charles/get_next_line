@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 15:46:18 by cdana             #+#    #+#             */
-/*   Updated: 2019/12/31 11:48:26 by charles          ###   ########.fr       */
+/*   Updated: 2020/01/02 11:21:52 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ int			ft_read(int fd, char **ctnt)
 	char	buff[BUFFER_SIZE + 1];
 
 	ret = 0;
-	while (ft_line_counter(ctnt[fd]) < 2 && (ret = read(fd, buff, BUFFER_SIZE)) > 0)
+	while (ft_line_counter(ctnt[fd]) < 2
+		&& (ret = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
 		buff[ret] = 0;
 		if (ft_merge(ctnt + fd, buff) == -1)
