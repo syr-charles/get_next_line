@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/02 12:42:09 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 15:33:22 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/03 14:25:45 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/03 14:25:48 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 static int	slen(char *s, char p)
 {
@@ -69,8 +69,10 @@ static int	ft_line_counter(char *s)
 int			ft_read(int fd, char **ctnt)
 {
 	int		ret;
-	char	buff[BUFFER_SIZE + 1];
+	char	*buff;
 
+	if (!(buff = malloc(BUFFER_SIZE + 1)))
+		return (-1);
 	ret = 0;
 	while (ft_line_counter(ctnt[fd]) < 1
 		&& (ret = read(fd, buff, BUFFER_SIZE)) > 0)
@@ -81,6 +83,7 @@ int			ft_read(int fd, char **ctnt)
 	}
 	if (ret < 0)
 		return (-1);
+	free(buff);
 	return (1);
 }
 

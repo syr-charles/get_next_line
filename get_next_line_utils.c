@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 15:46:18 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/02 15:32:30 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/03 14:24:04 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,10 @@ static int	ft_line_counter(char *s)
 int			ft_read(int fd, char **ctnt)
 {
 	int		ret;
-	char	buff[BUFFER_SIZE + 1];
+	char	*buff;
 
+	if (!(buff = malloc(BUFFER_SIZE + 1)))
+		return (-1);
 	ret = 0;
 	while (ft_line_counter(ctnt[fd]) < 1
 		&& (ret = read(fd, buff, BUFFER_SIZE)) > 0)
@@ -81,6 +83,7 @@ int			ft_read(int fd, char **ctnt)
 	}
 	if (ret < 0)
 		return (-1);
+	free(buff);
 	return (1);
 }
 
