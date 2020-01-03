@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 15:46:18 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/03 14:24:04 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/03 14:27:48 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ int			ft_read(int fd, char **ctnt)
 	{
 		buff[ret] = 0;
 		if (ft_merge(ctnt + fd, buff) == -1)
+		{
+			free(buff);
 			return (-1);
+		}
 	}
+	free(buff);
 	if (ret < 0)
 		return (-1);
-	free(buff);
 	return (1);
 }
 
