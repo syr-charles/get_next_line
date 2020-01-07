@@ -6,11 +6,11 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 14:28:07 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/03 14:28:09 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/04 14:06:45 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	slen(char *s, char p)
 {
