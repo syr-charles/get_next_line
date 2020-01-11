@@ -6,12 +6,12 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 14:39:06 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/07 18:00:46 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/11 16:54:30 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+
 static int	ft_init(char **ctnt, char **line, int fd)
 {
 	if (line == 0 || ctnt == 0)
@@ -55,6 +55,5 @@ int			get_next_line(int fd, char **line)
 		free(ctnt[fd]);
 		ctnt[fd] = NULL;
 	}
-	printf("ret:%d ctnt$%s$\n", ret, ctnt[fd]);
 	return (ret);
 }

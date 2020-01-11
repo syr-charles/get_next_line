@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 12:40:27 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/07 13:11:27 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:08:48 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,21 @@ static int	ft_init(char **ctnt, char **line, int fd)
 int			get_next_line(int fd, char **line)
 {
 	static char		*ctnt[OPEN_MAX];
+	int				ret;
 
 	if (ft_init(ctnt + fd, line, fd) == -1)
 		return (-1);
 	if (ft_read(fd, ctnt) == -1)
 	{
 		free(*line);
-		*line = NULL;	
+		*line = NULL;
 		return (-1);
 	}
-	if (ctnt[fd][0] == 0)
+	ret = ft_cpy_shift(ctnt + fd, line);
+	if (ret == 0)
 	{
 		free(ctnt[fd]);
 		ctnt[fd] = 0;
-		return (0);
 	}
-	return (ft_cpy_shift(ctnt + fd, line));
+	return (ret);
 }
