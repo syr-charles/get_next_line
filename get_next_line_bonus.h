@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/02 12:41:32 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/04 14:07:08 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/15 18:15:16 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/15 18:20:08 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 int		get_next_line(int fd, char **line);
 int		ft_merge(char **dest, char *buff);

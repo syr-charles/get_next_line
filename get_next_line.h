@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/27 16:27:52 by charles           #+#    #+#             */
-/*   Updated: 2020/01/04 13:53:26 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/15 18:12:43 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/15 18:19:34 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 int		get_next_line(int fd, char **line);
 int		ft_merge(char **dest, char *buff);

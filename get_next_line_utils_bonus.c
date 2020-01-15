@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/03 14:28:07 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/04 14:06:45 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/15 18:15:55 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/15 18:16:06 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,6 @@ int			ft_merge(char **dest, char *right)
 	return (1);
 }
 
-static int	ft_line_counter(char *s)
-{
-	int		i;
-	int		nb;
-
-	i = 0;
-	nb = 0;
-	while (s[i])
-	{
-		if (s[i] == '\n')
-			nb++;
-		i++;
-	}
-	return (nb);
-}
-
 int			ft_read(int fd, char **ctnt)
 {
 	int		ret;
@@ -74,7 +58,7 @@ int			ft_read(int fd, char **ctnt)
 	if (!(buff = malloc(BUFFER_SIZE + 1)))
 		return (-1);
 	ret = 0;
-	while (ft_line_counter(ctnt[fd]) < 1
+	while (ctnt[fd][slen(ctnt[fd], '\n')] != '\n'
 		&& (ret = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
 		buff[ret] = 0;
@@ -96,7 +80,6 @@ int			ft_cpy_shift(char **ctnt, char **line)
 	int		j;
 	int		ret;
 
-	free(*line);
 	if (!(*line = malloc(slen(*ctnt, '\n') + 1)))
 		return (-1);
 	i = 0;

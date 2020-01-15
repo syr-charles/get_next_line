@@ -5,55 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/02 12:40:27 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/11 17:08:48 by cdana            ###   ########.fr       */
+/*   Created: 2020/01/15 18:13:37 by cdana             #+#    #+#             */
+/*   Updated: 2020/01/15 18:16:22 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-
-static int	ft_init(char **ctnt, char **line, int fd)
-{
-	if (line == 0 || ctnt == 0)
-		return (-1);
-	if (*line)
-		*line = 0;
-	if (!(*line = malloc(1)))
-		return (-1);
-	(*line)[0] = 0;
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
-	{
-		free(*line);
-		*line = NULL;
-		return (-1);
-	}
-	if (*ctnt == 0)
-	{
-		if (!((*ctnt) = malloc(1)))
-			return (-1);
-		(*ctnt)[0] = 0;
-	}
-	return (1);
-}
 
 int			get_next_line(int fd, char **line)
 {
 	static char		*ctnt[OPEN_MAX];
 	int				ret;
 
-	if (ft_init(ctnt + fd, line, fd) == -1)
+	if (fd < 0 || !line || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (-1);
-	if (ft_read(fd, ctnt) == -1)
+	if (ctnt[fd] == NULL)
 	{
-		free(*line);
-		*line = NULL;
-		return (-1);
+		if (!(ctnt[fd] = malloc(1)))
+			return (-1);
+		ctnt[fd][0] = '\0';
 	}
-	ret = ft_cpy_shift(ctnt + fd, line);
-	if (ret == 0)
+	if (ft_read(fd, ctnt) == -1)
+		return (-1);
+	if ((ret = ft_cpy_shift(ctnt + fd, line)) == 0)
 	{
 		free(ctnt[fd]);
-		ctnt[fd] = 0;
+		ctnt[fd] = NULL;
 	}
 	return (ret);
 }
