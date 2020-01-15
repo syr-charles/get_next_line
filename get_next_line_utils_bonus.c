@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 18:15:55 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/15 18:16:06 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/15 18:30:11 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	slen(char *s, char p)
 	return (i);
 }
 
-int			ft_merge(char **dest, char *right)
+static int	ft_merge(char **dest, char *right)
 {
 	int		i;
 	int		j;

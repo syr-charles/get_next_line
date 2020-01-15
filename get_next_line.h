@@ -6,7 +6,7 @@
 /*   By: cdana <cdana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 18:12:43 by cdana             #+#    #+#             */
-/*   Updated: 2020/01/15 18:19:34 by cdana            ###   ########.fr       */
+/*   Updated: 2020/01/15 18:29:29 by cdana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # endif
 
 int		get_next_line(int fd, char **line);
-int		ft_merge(char **dest, char *buff);
 int		ft_cpy_shift(char **ctnt, char **line);
 int		ft_read(int fd, char **ctnt);
 #endif
